@@ -1,0 +1,29 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Check ref is a tag
+        if: github.ref_type != 'tag'
+        run: |
+          echo "❌ Publishing must be triggered from a tag. Current ref_type is: ${{ github.ref_type }}"
+          echo "Please select a tag (not a branch) in 'Use workflow from' when running this workflow"
+          exit 1
+
+      - name: Checkout at tag
+        uses: actions/checkout@v7
+
+      - name: Publish
+        env:
+          KOTLIN_TOOLCHAIN_MAVEN_CENTRAL_USERNAME: ${{ secrets.KOTLIN_TOOLCHAIN_MAVEN_CENTRAL_USERNAME }}
+          KOTLIN_TOOLCHAIN_MAVEN_CENTRAL_PASSWORD: ${{ secrets.KOTLIN_TOOLCHAIN_MAVEN_CENTRAL_PASSWORD }}
+          KOTLIN_TOOLCHAIN_SIGNING_KEY: ${{ secrets.KOTLIN_TOOLCHAIN_SIGNING_KEY }}
+          KOTLIN_TOOLCHAIN_SIGNING_KEY_PASSPHRASE: ${{ secrets.KOTLIN_TOOLCHAIN_SIGNING_KEY_PASSPHRASE }}
+        run: ./kotlin publish mavenCentral

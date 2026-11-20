@@ -7,7 +7,7 @@ description: A thin abstraction layer for analytics events in Kotlin Multiplatfo
 settings:
   publishing:
     enabled: true
-    group: com.shenghaiyang
+    group: com.shenghaiyang.tracker
     version: 0.1.0
     mavenCentral:
       enabled: true
