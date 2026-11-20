@@ -1,3 +1,25 @@
 product:
   type: kmp/lib
   platforms: [ android, iosArm64, iosSimulatorArm64 ]
+
+description: A thin abstraction layer for analytics events in Kotlin Multiplatform.
+
+settings:
+  publishing:
+    enabled: true
+    group: com.shenghaiyang
+    version: 0.1.0
+    mavenCentral:
+      enabled: true
+      notifyKlibsIo: true
+      publishingMode: manual
+    signArtifacts: true
+    publishSources: true
+    pom:
+      url: https://github.com/shenghaiyang/tracker
+      scm: https://github.com/shenghaiyang/tracker.git
+      developers:
+        - name: shenghaiyang
+      licenses:
+        - name: Apache-2.0
+          url: https://www.apache.org/licenses/LICENSE-2.0
