@@ -1,5 +1,6 @@
 # tracker
 
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.shenghaiyang.tracker/tracker)](https://central.sonatype.com/artifact/com.shenghaiyang.tracker/tracker)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 **A thin abstraction layer for analytics events in Kotlin Multiplatform.**
@@ -81,17 +82,10 @@ to whatever its backend accepts.
 
 ## Modules
 
-| Module | Purpose |
-| --- | --- |
-| `tracker` | Core abstraction: `Tracker`, `TrackHandler`, `TrackerBuilder` |
-| `tracker-firebase` | Firebase Analytics implementation (planned) |
-
-## Build and test
-
-```bash
-./kotlin build
-./kotlin test -m tracker
-```
+| Module             | Purpose                                                       |
+|--------------------|---------------------------------------------------------------|
+| `tracker`          | Core abstraction: `Tracker`, `TrackHandler`, `TrackerBuilder` |
+| `tracker-firebase` | Firebase Analytics implementation (planned)                   |
 
 ## License
 
